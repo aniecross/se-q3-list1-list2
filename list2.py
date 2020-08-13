@@ -5,8 +5,9 @@ Kenzie assignment: List2
 """
 # Your name, plus anyone who helped you with this assignment.
 # Give credit where credit is due.
-__author__ = """Anie Cross with help from intructor demo recordings,
-Google search, docs.python.org, 3schools.com, geeksforgeeks.org"""
+__author__ = """Anie Cross with help from intructor demo recordings, Google search,
+docs.python.org, stackoverflow.com, 3schools.com, geeksforgeeks.org,
+got help with list2.py from tutor H.Post"""
 
 # Copyright 2010 Google Inc.
 # Licensed under the Apache License, Version 2.0
@@ -46,8 +47,10 @@ def remove_adjacent(nums):
 
 
 def zip_merge(list1, list2):
-
-    return
+    new_list = []
+    for x, y in zip(list1, list2):
+        new_list.append(x + y)
+    return new_list
 
 
 # F. empty_filter
@@ -75,8 +78,16 @@ def empty_filter(list1):
 
 
 def linear_merge(list1, list2):
-
-    return
+    index1, index2 = 0, 0
+    merge_list = []
+    while index1 < len(list1) and index2 < len(list2):
+        if list1[index1] < list2[index2]:
+            merge_list.append(list1[index1])
+            index1 += 1
+        else:
+            merge_list.append(list2[index2])
+            index2 += 1
+    return merge_list + list1[index1:] + list2[index2:]
 
 
 # Provided simple test() function used in main() to print

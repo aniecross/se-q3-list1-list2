@@ -67,7 +67,7 @@ def front_x(words):
 
 
 def sort_last(tuples):
-    return
+    return sorted(tuples, key=lambda nums: nums[-1])
 
 
 # Provided simple test() function used in main() to print
